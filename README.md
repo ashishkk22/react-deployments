@@ -1,6 +1,21 @@
 
 # React application deployment. 
-React pratical deployment with different environment. 
+React practical deployment with different environment. 
+
+Vite uses dotenv to load additional environment variables from the following files in your environment directory:
+```
+.env                # loaded in all cases
+.env.local          # loaded in all cases, ignored by git
+.env.[mode]         # only loaded in specified mode
+.env.[mode].local   # only loaded in specified mode, ignored by git
+```
+
+To pass the different .env we can run the below command as per the required build.
+```
+vite --mode development                # loaded the variables from the .env.development
+tsc && vite build --mode staging       # loaded the variable from the .env.staging
+tsc && vite build --mode production    # loaded the variable from the .env.production
+```
 
 ### Practical 2
 
